@@ -123,7 +123,7 @@ export const db = {
     await sql`DELETE FROM habits WHERE user_id = ${userId}`;
     const result = await sql`DELETE FROM users WHERE id = ${userId}`;
 
-    return result.rowCount > 0;
+    return (result.rowCount ?? 0) > 0;
   },
 
   // 習慣
@@ -155,7 +155,7 @@ export const db = {
     await initializeDatabase();
     const result = await sql`DELETE FROM habits WHERE id = ${habitId}`;
 
-    return result.rowCount > 0;
+    return (result.rowCount ?? 0) > 0;
   },
 
   // 毎日のタスク
@@ -308,6 +308,6 @@ export const db = {
       UPDATE users SET password_hash = ${passwordHash} WHERE id = ${userId}
     `;
 
-    return result.rowCount > 0;
+    return (result.rowCount ?? 0) > 0;
   },
 };
