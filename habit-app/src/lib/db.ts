@@ -130,7 +130,7 @@ export const db = {
   createHabit: async (userId: string, name: string, description?: string): Promise<Habit> => {
     await initializeDatabase();
     const id = generateId();
-    const createdAt = new Date();
+    const createdAt = new Date().toISOString();
 
     const result = await sql<Habit>`
       INSERT INTO habits (id, user_id, name, description, created_at)
@@ -197,7 +197,7 @@ export const db = {
 
   updateDailyTask: async (taskId: string, completed: boolean): Promise<DailyTask | undefined> => {
     await initializeDatabase();
-    const completedAt = completed ? new Date() : null;
+    const completedAt = completed ? new Date().toISOString() : null;
 
     const result = await sql<DailyTask>`
       UPDATE daily_tasks
