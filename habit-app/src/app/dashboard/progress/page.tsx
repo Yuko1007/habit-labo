@@ -229,7 +229,7 @@ export default function ProgressPage() {
                                 color: isCompleted ? '#FFFFFF' : '#9CA3AF'
                               }}
                             >
-                              {isCompleted ? '✅' : ''}
+                              {isCompleted ? '' : ''}
                             </div>
                           </div>
                         );
@@ -244,8 +244,7 @@ export default function ProgressPage() {
           {/* 凡例 */}
           <div className="mt-6 pt-4" style={{ borderTop: '1px solid #E5E7EB' }}>
             <p className="text-xs" style={{ color: '#6B7280' }}>
-              <span className="inline-block text-white px-2 py-0.5 rounded text-xs mr-2" style={{ backgroundColor: '#4F46E5' }}>
-                ✅
+              <span className="inline-block px-2 py-0.5 rounded text-xs mr-2" style={{ backgroundColor: '#4F46E5' }}>
               </span>
               その日のやることをすべて完了した
             </p>
