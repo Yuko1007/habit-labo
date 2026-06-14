@@ -300,4 +300,14 @@ export const db = {
 
     return streak;
   },
+
+  // パスワード更新
+  updateUserPassword: async (userId: string, passwordHash: string): Promise<boolean> => {
+    await initializeDatabase();
+    const result = await sql`
+      UPDATE users SET password_hash = ${passwordHash} WHERE id = ${userId}
+    `;
+
+    return result.rowCount > 0;
+  },
 };
