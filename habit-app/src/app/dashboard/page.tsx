@@ -245,7 +245,7 @@ export default function DashboardPage() {
     <div style={{ minHeight: '100vh', backgroundColor: '#F8FAFC' }}>
       {/* ヘッダー */}
       <header style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5E7EB' }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1rem' }}>
           <div className="flex justify-between items-center">
             <div>
               <h1 style={{ fontSize: '28px', fontWeight: '600', color: '#4F46E5', margin: 0 }}>習慣LABO</h1>
@@ -269,7 +269,7 @@ export default function DashboardPage() {
 
       {/* メインナビゲーション */}
       <div className="bg-white" style={{ borderBottom: '1px solid #E5E7EB' }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1rem' }}>
           <div className="flex space-x-6">
             <Link
               href="/dashboard"
@@ -304,7 +304,7 @@ export default function DashboardPage() {
 
 
       {/* メインコンテンツ */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+      <main style={{ maxWidth: '1280px', margin: '0 auto', padding: '2rem 1rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
         {/* 励ましメッセージ */}
         <div className="rounded-2xl p-6 shadow-sm" style={{ backgroundColor: '#EEF2FF', border: '1px solid #E5E7EB' }}>
           <p style={{ color: '#1F2937' }} className="font-semibold text-base leading-relaxed whitespace-pre-line">
@@ -314,7 +314,7 @@ export default function DashboardPage() {
 
         {/* Myチェック */}
         <div className="space-y-4">
-          <h2 className="text-xl font-bold" style={{ color: '#1F2937', borderBottom: '1px solid #E5E7EB', paddingBottom: '1rem' }}>Myチェック</h2>
+          <h2 style={{ fontSize: '20px', fontWeight: 'bold', color: '#1F2937', borderBottom: '1px solid #E5E7EB', paddingBottom: '1rem' }}>Myチェック</h2>
 
           {/* 進捗表示 */}
           <div className="rounded-2xl p-6 shadow-sm" style={{ backgroundColor: '#FFFFFF', border: '1px solid #E5E7EB' }}>
