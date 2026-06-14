@@ -75,7 +75,7 @@ export const db = {
   createUser: async (email: string, passwordHash: string, nickname: string, role: 'admin' | 'member' = 'member'): Promise<User> => {
     await initializeDatabase();
     const id = generateId();
-    const createdAt = new Date();
+    const createdAt = new Date().toISOString();
 
     const result = await sql<User>`
       INSERT INTO users (id, email, password_hash, nickname, role, created_at)
