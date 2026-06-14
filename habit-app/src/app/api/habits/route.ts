@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const habits = db.getHabitsByUserId(userId);
+    const habits = await db.getHabitsByUserId(userId);
     return NextResponse.json({ success: true, habits });
   } catch (error) {
     return NextResponse.json(
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const habit = db.createHabit(userId, name, description);
+    const habit = await db.createHabit(userId, name, description);
     return NextResponse.json({ success: true, habit }, { status: 201 });
   } catch (error) {
     return NextResponse.json(

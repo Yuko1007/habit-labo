@@ -16,10 +16,10 @@ export async function GET(request: NextRequest) {
 
   try {
     if (date) {
-      const tasks = db.getDailyTasksByUserAndDate(userId, date);
+      const tasks = await db.getDailyTasksByUserAndDate(userId, date);
       return NextResponse.json({ success: true, tasks });
     } else if (year && month) {
-      const tasks = db.getDailyTasksByUserAndMonth(userId, parseInt(year), parseInt(month));
+      const tasks = await db.getDailyTasksByUserAndMonth(userId, parseInt(year), parseInt(month));
       return NextResponse.json({ success: true, tasks });
     } else {
       return NextResponse.json(
@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const task = db.createDailyTask(userId, habitId, date);
+    const task = await db.createDailyTask(userId, habitId, date);
     return NextResponse.json({ success: true, task }, { status: 201 });
   } catch (error) {
     return NextResponse.json(

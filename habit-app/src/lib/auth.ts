@@ -1,33 +1,28 @@
 import crypto from 'crypto';
 import { db } from './db';
 
-// シンプルなパスワードハッシュ化（本番環境では bcrypt を使用）
 function hashPassword(password: string): string {
   return crypto.createHash('sha256').update(password).digest('hex');
 }
 
 export const auth = {
-  // ユーザー登録
-  register: (email: string, password: string, nickname: string) => {
-    // メールアドレスの形式チェック
+  register: async (email: string, password: string, nickname: string) => {
     if (!email.includes('@')) {
       return { success: false, message: 'メールアドレスが無効です' };
     }
 
-    // 既存ユーザーチェック
-    const existingUser = db.getUserByEmail(email);
+    const existingUser = await db.getUserByEmail(email);
     if (existingUser) {
       return { success: false, message: 'このメールアドレスは既に登録されています' };
     }
 
-    // パスワード検証
     if (password.length < 6) {
       return { success: false, message: 'パスワードは6文字以上である必要があります' };
     }
 
     try {
       const passwordHash = hashPassword(password);
-      const user = db.createUser(email, passwordHash, nickname, 'member');
+      const user = await db.createUser(email, passwordHash, nickname, 'member');
       return {
         success: true,
         message: '登録完了しました',
@@ -44,9 +39,8 @@ export const auth = {
     }
   },
 
-  // ログイン
-  login: (email: string, password: string) => {
-    const user = db.getUserByEmail(email);
+  login: async (email: string, password: string) => {
+    const user = await db.getUserByEmail(email);
 
     if (!user) {
       return { success: false, message: 'メールアドレスまたはパスワードが正しくありません' };
@@ -70,9 +64,8 @@ export const auth = {
     };
   },
 
-  // パスワードリセット（シンプル版）
-  resetPassword: (email: string, newPassword: string) => {
-    const user = db.getUserByEmail(email);
+  resetPassword: async (email: string, newPassword: string) => {
+    const user = await db.getUserByEmail(email);
 
     if (!user) {
       return { success: false, message: 'ユーザーが見つかりません' };

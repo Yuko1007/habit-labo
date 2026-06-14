@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const result = auth.login(email, password);
+    const result = await auth.login(email, password);
 
     if (result.success) {
       // クッキーにユーザー情報を保存（1か月）

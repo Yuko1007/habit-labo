@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const result = auth.register(email, password, nickname);
+    const result = await auth.register(email, password, nickname);
 
     if (result.success) {
       return NextResponse.json(result, { status: 201 });

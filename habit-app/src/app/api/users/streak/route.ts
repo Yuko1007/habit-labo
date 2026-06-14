@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const streak = db.getStreakCount(userId);
+    const streak = await db.getStreakCount(userId);
 
     return NextResponse.json({
       success: true,

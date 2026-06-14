@@ -12,7 +12,7 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    const task = db.updateDailyTask(taskId, completed);
+    const task = await db.updateDailyTask(taskId, completed);
     if (!task) {
       return NextResponse.json(
         { success: false, message: 'タスクが見つかりません' },

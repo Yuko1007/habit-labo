@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const stats = db.getHabitMonthlyStats(userId, parseInt(year), parseInt(month));
+    const stats = await db.getHabitMonthlyStats(userId, parseInt(year), parseInt(month));
 
     return NextResponse.json({
       success: true,
