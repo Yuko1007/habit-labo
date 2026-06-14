@@ -80,8 +80,8 @@ export default function RegisterPage() {
               onChange={(e) => setNickname(e.target.value)}
               placeholder="例：ゆうこ"
               style={{ width: '100%', padding: '0.625rem 1rem', border: '1px solid #E5E7EB', borderRadius: '0.5rem', fontSize: '14px', color: '#1F2937', outline: 'none', transition: 'all 0.2s' }}
-              onFocus={(e) => { e.currentTarget.style.ring = '2px'; e.currentTarget.style.ringColor = '#4F46E5'; }}
-              onBlur={(e) => { e.currentTarget.style.ring = 'none'; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = '#4F46E5'; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; }}
             />
           </div>
 
@@ -98,8 +98,8 @@ export default function RegisterPage() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="example@email.com"
               style={{ width: '100%', padding: '0.625rem 1rem', border: '1px solid #E5E7EB', borderRadius: '0.5rem', fontSize: '14px', color: '#1F2937', outline: 'none', transition: 'all 0.2s' }}
-              onFocus={(e) => { e.currentTarget.style.ring = '2px'; e.currentTarget.style.ringColor = '#4F46E5'; }}
-              onBlur={(e) => { e.currentTarget.style.ring = 'none'; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = '#4F46E5'; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; }}
             />
           </div>
 
@@ -117,8 +117,8 @@ export default function RegisterPage() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••"
               style={{ width: '100%', padding: '0.625rem 1rem', border: '1px solid #E5E7EB', borderRadius: '0.5rem', fontSize: '14px', color: '#1F2937', outline: 'none', transition: 'all 0.2s' }}
-              onFocus={(e) => { e.currentTarget.style.ring = '2px'; e.currentTarget.style.ringColor = '#4F46E5'; }}
-              onBlur={(e) => { e.currentTarget.style.ring = 'none'; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = '#4F46E5'; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; }}
             />
           </div>
 
