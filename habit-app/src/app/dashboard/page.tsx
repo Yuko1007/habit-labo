@@ -306,8 +306,8 @@ export default function DashboardPage() {
       {/* メインコンテンツ */}
       <main style={{ maxWidth: '1280px', margin: '0 auto', padding: '2rem 1rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
         {/* 励ましメッセージ */}
-        <div className="rounded-2xl p-6 shadow-sm" style={{ backgroundColor: '#EEF2FF', border: '1px solid #E5E7EB' }}>
-          <p style={{ color: '#1F2937' }} className="font-semibold text-base leading-relaxed whitespace-pre-line">
+        <div className="rounded-2xl shadow-sm" style={{ backgroundColor: '#EEF2FF', border: '1px solid #E5E7EB', padding: '1rem' }}>
+          <p style={{ color: '#1F2937', fontSize: '14px', lineHeight: '1.5', margin: 0 }}>
             {todayMessage}
           </p>
         </div>
