@@ -12,7 +12,7 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    db.deleteUser(userId);
+    await db.deleteUser(userId);
 
     return NextResponse.json({
       success: true,
